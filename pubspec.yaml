@@ -10,7 +10,7 @@ dev_dependencies:
   dart_code_metrics_presets: ^2.16.0
   husky: ^0.1.7
   lint_staged: ^0.5.1
-  melos: ^6.1.0
+  melos: ^6.2.0
 
 lint_staged:
   # Exclude generated Dart files globally

@@ -16,17 +16,7 @@ Follow these steps to set up and run the project:
 - **Flutter Version Management (FVM)** installed.
 
    ```bash
-   brew tap leoafarias/fvm
    brew install fvm
-   which flutter
-   fvm flutter precache
-   fvm install stable
-   fvm global stable
-   fvm install 3.24.3
-   fvm use 3.24.3
-   fvm list
-   brew install dart-sdk
-   dart pub global activate melos
    ```
 
 - **Melos** installed.
@@ -53,16 +43,12 @@ Follow these steps to set up and run the project:
    fvm use 3.24.3
    ```
 
-   re-open if need
-
 3. **Install Dependencies**
 
    Fetch all project dependencies:
 
    ```bash
    fvm flutter pub get
-   fvm flutter pub outdated
-   fvm flutter pub upgrade --major-versions
    ```
 
 4. **Bootstrap the Project with Melos**
@@ -71,6 +57,9 @@ Follow these steps to set up and run the project:
 
    ```bash
    fvm dart pub global activate melos
+   ```
+
+   ```bash
    melos bootstrap
    ```
 
