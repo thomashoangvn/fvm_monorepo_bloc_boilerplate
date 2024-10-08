@@ -1,0 +1,12 @@
+# melos_managed_dependency_overrides: deps,design,feature_auth,feature_core,infrastructure
+dependency_overrides:
+  deps:
+    path: ../../deps
+  design:
+    path: ../../design
+  feature_auth:
+    path: ../auth
+  feature_core:
+    path: ../_core
+  infrastructure:
+    path: ../../infrastructure

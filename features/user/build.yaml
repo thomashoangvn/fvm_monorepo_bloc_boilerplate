@@ -1,0 +1,113 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+# 
+
+# This `build.yaml` file is used to configure various code generation tools such as Auto Route,
+# Freezed, Json Serializable, Injectable, and Slang for a Flutter project.
+
+
+targets:
+  $default:
+    builders:
+      # Auto Route Generators
+      #
+      # These settings configure the code generation for the Auto Route package. Auto Route
+      # helps in generating the routing infrastructure for a Flutter app.
+      #
+      # `auto_router_generator`: Generates the primary routing files, caching build options
+      # to improve build performance.
+
+      # This section handles the main AutoRoute generator for router.dart files.
+      auto_route_generator:auto_router_generator:
+        options:
+          enable_cached_builds: true
+        generate_for:
+          include:
+            - lib/_core/_router/router.dart
+
+      # Auto Route Generators
+      #
+      # These settings configure the code generation for the Auto Route package. Auto Route
+      # helps in generating the routing infrastructure for a Flutter app.
+      #
+      # `auto_router_generator`: Generates the primary routing files, caching build options
+      # to improve build performance.
+
+      # This section handles the main AutoRoute generator for router.dart files.
+      auto_route_generator:auto_route_generator:
+        options:
+          enable_cached_builds: true
+        generate_for:
+          include:
+            - lib/views/*.page.dart
+            - lib/views/**/*.page.dart
+
+      # Freezed Generators
+      #
+      # Freezed is used to generate immutable data classes, unions, and sealed classes. This section configures how
+      # Freezed generates code, particularly controlling the behavior of `when` and `map` methods.
+
+      # This section controls Freezed code generation.
+      freezed:
+        options:
+          map: false
+          when:
+            when: false
+            maybe_when: false
+            when_or_null: true
+        generate_for:
+          include:
+            - lib/_core/_di/*.dart
+            - lib/models/*.model.dart
+            - lib/views/cubits/*.cubit.dart
+
+      # Json Serializable Generators
+      #
+      # Json Serializable is used to generate serialization and deserialization logic for models.
+      # It can automatically create methods to convert objects to and from JSON format.
+
+      # This section controls JSON serialization and deserialization code generation.
+      json_serializable:
+        options:
+          create_factory: true
+          create_to_json: true
+          explicit_to_json: true
+          field_rename: none
+          include_if_null: true
+        generate_for:
+          include:
+            - lib/models/*.model.dart
+            - lib/views/cubits/*.cubit.dart
+
+      # Injectable Generators
+      #
+      # Injectable is used to generate dependency injection code for the app. It automatically generates
+      # registration code for classes annotated with `@Injectable` or `@LazySingleton`.
+
+      # This section controls the Injectable dependency injection code generation.
+      injectable_generator:injectable_builder:
+        generate_for:
+          include:
+            - lib/_core/_di/*.dart
+            - lib/services/*.service.dart
+            - lib/views/cubits/*.cubit.dart
+
+      # Slang Generators
+      #
+      # Slang is used for internationalization (i18n) by generating translation classes. This configuration
+      # controls how translations are handled and generated.
+
+      # This section configures the Slang package for generating i18n (internationalization) translation classes.
+      slang_build_runner:
+        options:
+          locale_handling: false
+          translation_class_visibility: public
+          fallback_strategy: base_locale
+          input_directory: lib/_core/_i18n
+          output_directory: lib/_core/_i18n
+          output_file_name: translations.g.dart
+          key_case: camel
+          key_map_case: camel
+          param_case: camel
+          flat_map: false

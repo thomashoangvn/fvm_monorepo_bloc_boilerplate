@@ -1,0 +1,31 @@
+name: design_widgetbook
+description: The design system documentation of the project.
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ">=3.5.3 <4.0.0"
+
+dependencies:
+  deps:
+    path: ../deps
+  design:
+    path: ../design
+  flutter:
+    sdk: flutter
+  widgetbook: ^4.0.0-alpha.2
+  widgetbook_annotation: ^3.2.0
+
+dependency_overrides:
+  flutter_secure_storage_web:
+    git:
+      url: https://github.com/fikretsengul/flutter_secure_storage.git
+      path: flutter_secure_storage_web
+      ref: develop
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  widgetbook_generator: ^4.0.0-alpha.2
+
+flutter:
+  uses-material-design: true

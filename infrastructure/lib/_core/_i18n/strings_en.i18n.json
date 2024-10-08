@@ -1,0 +1,85 @@
+{
+  "permissions": {
+    "dialog": {
+      "buttons": {
+        "cancel": "Cancel",
+        "ok": "OK",
+        "openSettings": "Open Settings",
+        "retry": "Retry",
+        "understood": "Understood"
+      },
+      "denied": {
+        "description": "@:permissions.type is required to proceed. Please consider enabling it in your settings.",
+        "title": "@:permissions.type Permission Denied"
+      },
+      "limited": {
+        "description": "You have granted limited @:permissions.type access. If you want to allow full access, please adjust in your settings.",
+        "title": "@:permissions.type Permission Limited"
+      },
+      "permanentlyDenied": {
+        "description": "@:permissions.type is required but has been permanently denied. Please enable it from app settings.",
+        "title": "@:permissions.type Permission Permanently Denied"
+      },
+      "provisional": {
+        "description": "The app is provisionally authorized. Some features might be limited.",
+        "title": "Provisional @:permissions.type Permission"
+      },
+      "restricted": {
+        "description": "Access to @:permissions.type is restricted by system policies or parental controls.",
+        "title": "@:permissions.type Permission Restricted"
+      }
+    },
+    "failures": {
+      "invalidPermissionType": "Invalid permission type: $type",
+      "unknownPermissionRequest": "An error occurred while requesting permission."
+    },
+    "type(context=PermissionTypeEnum)": {
+      "accessMediaLocation": "Access Media Location",
+      "accessNotificationPolicy": "Access Notification Policy",
+      "activityRecognition": "Activity Recognition",
+      "appTrackingTransparency": "App Tracking Transparency",
+      "audio": "Audio",
+      "bluetooth": "Bluetooth",
+      "bluetoothAdvertise": "Bluetooth Advertise",
+      "bluetoothConnect": "Bluetooth Connect",
+      "bluetoothScan": "Bluetooth Scan",
+      "calendar": "Calendar",
+      "calendarFullAccess": "Calendar Full Access",
+      "calendarWriteOnly": "Calendar Write Only",
+      "camera": "Camera",
+      "contacts": "Contacts",
+      "criticalAlerts": "Critical Alerts",
+      "ignoreBatteryOptimizations": "Ignore Battery Optimizations",
+      "location": "Location",
+      "locationAlways": "Location Always",
+      "locationWhenInUse": "Location When In Use",
+      "manageExternalStorage": "Manage External Storage",
+      "mediaLibrary": "Media Library",
+      "microphone": "Microphone",
+      "nearbyWifiDevices": "Nearby Wi-Fi Devices",
+      "notification": "Notification",
+      "phone": "Phone",
+      "photos": "Photos",
+      "photosAddOnly": "Photos Add Only",
+      "reminders": "Reminders",
+      "requestInstallPackages": "Request Install Packages",
+      "scheduleExactAlarm": "Schedule Exact Alarm",
+      "sensors": "Sensors",
+      "sensorsAlways": "Sensors Always",
+      "sms": "SMS",
+      "speech": "Speech",
+      "storage": "Storage",
+      "systemAlertWindow": "System Alert Window",
+      "unknown": "Unknown",
+      "videos": "Videos"
+    }
+  },
+  "presentation": {
+    "validations": {
+      "email": "$field should be a valid email address.",
+      "maxLength": "$field cannot be more than $count characters.",
+      "minLength": "$field cannot be less than $count characters.",
+      "required": "$field is required."
+    }
+  }
+}

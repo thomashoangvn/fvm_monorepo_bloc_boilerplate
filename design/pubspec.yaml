@@ -1,0 +1,63 @@
+name: design
+description: The design system of the flutter advanced boilerplate.
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ">=3.5.3 <4.0.0"
+
+dependencies:
+  deps:
+    path: ../deps
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  theme_tailor_annotation: ^3.0.1
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  dart_code_metrics_presets: ^2.16.0
+  flutter_gen_runner: ^5.7.0
+  json_serializable: ^6.8.0
+  slang_build_runner: ^3.31.0
+  theme_tailor: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/anims/
+    - assets/images/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Inter/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter/Inter-Thin.ttf
+          weight: 100
+
+
+flutter_gen:
+  output: lib/_core/_constants/
+  line_length: 120
+  integrations:
+    flutter_svg: true
+    lottie: true
+  assets:
+    outputs:
+      package_parameter_enabled: true

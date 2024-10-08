@@ -1,0 +1,85 @@
+{
+  "permissions": {
+    "dialog": {
+      "buttons": {
+        "cancel": "Anulează",
+        "ok": "OK",
+        "openSettings": "Deschide Setările",
+        "retry": "Reîncearcă",
+        "understood": "Am înțeles"
+      },
+      "denied": {
+        "description": "@:permissions.type este necesar pentru a continua. Vă rugăm să luați în considerare activarea acestuia în setări.",
+        "title": "Permisiune @:permissions.type Refuzată"
+      },
+      "limited": {
+        "description": "Ați acordat acces limitat la @:permissions.type. Dacă doriți să permiteți accesul complet, vă rugăm să ajustați setările.",
+        "title": "Permisiune @:permissions.type Limitată"
+      },
+      "permanentlyDenied": {
+        "description": "@:permissions.type este necesar, dar a fost refuzat permanent. Vă rugăm să activați permisiunea din setările aplicației.",
+        "title": "Permisiune @:permissions.type Refuzată Permanent"
+      },
+      "provisional": {
+        "description": "Aplicația este autorizată provizoriu. Unele funcții ar putea fi limitate.",
+        "title": "Permisiune @:permissions.type Provizorie"
+      },
+      "restricted": {
+        "description": "Accesul la @:permissions.type este restricționat de politicile sistemului sau de controlul parental.",
+        "title": "Permisiune @:permissions.type Restricționată"
+      }
+    },
+    "failures": {
+      "invalidPermissionType": "Tip de permisiune invalid: $type",
+      "unknownPermissionRequest": "A apărut o eroare în timpul solicitării permisiunii."
+    },
+    "type(context=PermissionTypeEnum)": {
+      "accessMediaLocation": "Accesare Locație Media",
+      "accessNotificationPolicy": "Accesare Politică Notificări",
+      "activityRecognition": "Recunoașterea Activității",
+      "appTrackingTransparency": "Transparența Urmăririi Aplicației",
+      "audio": "Audio",
+      "bluetooth": "Bluetooth",
+      "bluetoothAdvertise": "Publicitate Bluetooth",
+      "bluetoothConnect": "Conectare Bluetooth",
+      "bluetoothScan": "Scanare Bluetooth",
+      "calendar": "Calendar",
+      "calendarFullAccess": "Acces Complet Calendar",
+      "calendarWriteOnly": "Doar Scriere în Calendar",
+      "camera": "Cameră",
+      "contacts": "Contacte",
+      "criticalAlerts": "Alerte Critice",
+      "ignoreBatteryOptimizations": "Ignorare Optimizări Baterie",
+      "location": "Locație",
+      "locationAlways": "Locație Întotdeauna",
+      "locationWhenInUse": "Locație Când Este Folosită",
+      "manageExternalStorage": "Gestionare Stocare Externă",
+      "mediaLibrary": "Bibliotecă Media",
+      "microphone": "Microfon",
+      "nearbyWifiDevices": "Dispozitive Wi-Fi Apropiate",
+      "notification": "Notificare",
+      "phone": "Telefon",
+      "photos": "Fotografii",
+      "photosAddOnly": "Adăugare Doar Fotografii",
+      "reminders": "Memento-uri",
+      "requestInstallPackages": "Solicitare Instalare Pachete",
+      "scheduleExactAlarm": "Programare Alarmă Exactă",
+      "sensors": "Senzori",
+      "sensorsAlways": "Senzori Întotdeauna",
+      "sms": "SMS",
+      "speech": "Vorbire",
+      "storage": "Stocare",
+      "systemAlertWindow": "Fereastră de Avertizare Sistem",
+      "unknown": "Necunoscut",
+      "videos": "Videoclipuri"
+    }
+  },
+  "presentation": {
+    "validations": {
+      "email": "$field trebuie să fie o adresă de email validă.",
+      "maxLength": "$field nu poate avea mai mult de $count caractere.",
+      "minLength": "$field nu poate avea mai puțin de $count caractere.",
+      "required": "$field este obligatoriu."
+    }
+  }
+}
