@@ -1,0 +1,20 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+# /
+
+# This `build.yaml` file is used to configure various code generation tools such as widgetbook_generator.
+# This YAML file sets up the target configurations for Widgetbook experimental builders.
+
+targets:
+  $default:
+    builders:
+      # This enables the experimental story builder for Widgetbook.
+      # The story builder generates stories for your components which are used for design reviews and previews.
+      widgetbook_generator:experimental_story_builder:
+        enabled: true
+
+      # This enables the experimental components builder for Widgetbook.
+      # The components builder generates the component previews that are used to document and interact with various UI elements.
+      widgetbook_generator:experimental_components_builder:
+        enabled: true

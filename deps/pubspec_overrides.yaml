@@ -1,0 +1,17 @@
+# melos_managed_dependency_overrides: design,feature_auth,feature_core,feature_user,infrastructure,flutter_secure_storage_web
+dependency_overrides:
+  design:
+    path: ../design
+  feature_auth:
+    path: ../features/auth
+  feature_core:
+    path: ../features/_core
+  feature_user:
+    path: ../features/user
+  infrastructure:
+    path: ../infrastructure
+  flutter_secure_storage_web:
+    git:
+      url: https://github.com/fikretsengul/flutter_secure_storage.git
+      ref: develop
+      path: flutter_secure_storage_web

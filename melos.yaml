@@ -1,0 +1,201 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+# 
+
+name: fmbb
+
+repository:
+  type: github
+  origin: https://github.com/thomashoangvn/fvm_monorepo_bloc_boilerplate.git
+  owner: thomashoangvn
+  name: Flutter Monorepo BLoC Boilerplate
+
+# Specifies to use fvm (Flutter Version Management) for the Flutter SDK.
+sdkPath: .fvm/flutter_sdk
+
+# Defines the project structure and the packages used in the workspace.
+packages:
+  - app
+  - deps
+  - design
+  - features/**
+  - infrastructure
+  - widgetbook
+
+command:
+  version:
+    # Restricts versioning to the main branch only.
+    branch: main
+    # Enables links to commits in the changelogs.
+    linkToCommits: true
+    # Creates a changelog for the entire workspace at the root level.
+    workspaceChangelog: true
+
+  bootstrap:
+    environment:
+      sdk: ">=3.5.3 <4.0.0"
+      flutter: ">=3.24.3 <4.0.0"
+    dependencies:
+      # List of dependencies for the project.
+      adaptive_theme: ^3.6.0
+      auto_route: ^9.2.2
+      back_button_interceptor: ^7.0.3
+      cupertino_icons: ^1.0.8
+      dio: ^5.7.0
+      dio_smart_retry: ^6.0.0
+      envied: ^0.5.4+1
+      flutter_bloc: ^8.1.6
+      flutter_native_splash: ^2.4.1
+      flutter_secure_storage: ^9.2.2
+      flutter_svg: ^2.0.10+1
+      fpdart: ^1.1.0
+      freezed_annotation: ^2.4.4
+      get_it: ^7.7.0
+      hydrated_bloc: ^9.1.5
+      infinite_scroll_pagination: ^4.0.0
+      injectable: ^2.4.4
+      internet_connection_checker_plus: ^2.5.1
+      intl: ^0.19.0
+      json_annotation: ^4.9.0
+      lottie: ^3.1.2
+      universal_html: ^2.2.4
+      package_info_plus: ^8.0.2
+      path_provider: ^2.1.4
+      permission_handler: ^11.3.1
+      reactive_forms: ^17.0.1
+      slang: ^3.31.2
+      slang_flutter: ^3.31.0
+      styled_text: ^8.1.0
+      talker_bloc_logger: ^4.4.1
+      talker_dio_logger: ^4.4.1
+      talker_flutter: ^4.4.1
+      theme_tailor_annotation: ^3.0.1
+      widgetbook: ^4.0.0-alpha.2
+
+    dev_dependencies:
+      # List of dev dependencies used for generating code, metrics, etc.
+      auto_route_generator: ^9.0.0
+      build_runner: ^2.4.13
+      dart_code_metrics_presets: ^2.16.0
+      envied_generator: ^0.5.4+1
+      flutter_gen_runner: ^5.7.0
+      freezed: ^2.5.7
+      injectable_generator: ^2.6.2
+      json_serializable: ^6.8.0
+      slang_build_runner: ^3.31.0
+      theme_tailor: ^3.0.1
+      widgetbook_generator: ^4.0.0-alpha.2
+
+    # Allows running `pub get` in parallel.
+    runPubGetInParallel: true
+
+    hooks:
+      pre: melos clean
+      post: melos generate && melos reset:ios
+
+  clean:
+    hooks:
+      pre: melos reset
+
+# Scripts for various tasks like cleaning, generating code, running tests, etc.
+scripts:
+  reset:
+    description: Clean things very deeply by removing untracked files.
+    run: |
+      melos exec --flutter -c 1 -- "flutter clean"
+
+  reset:ios:
+    description: Clean ios pods to fix any pods related issues.
+    run: |
+      cd app/ios && \
+      rm -Rf Pods 2>/dev/null || true && \
+      rm Podfile.lock 2>/dev/null || true && \
+      flutter precache --ios && \
+      pod install --repo-update
+
+  dart:check:
+    description: Run `dart` checks for all packages.
+    run: |
+      melos format -c 6 --line-length 120 --set-exit-if-changed .
+      melos analyze -c 6 --fatal-infos --fatal-warnings .
+
+  dart:fix:
+    description: Run `dart` fix for all packages.
+    run: |
+      melos exec -c 6 --ignore="*example*" -- \
+      dart format -l 120 .
+      dart analyze -fatal-infos --fatal-warnings .
+
+  dcm:check:
+    description: Run `dart code metrics` checks for all packages.
+    run: |
+      melos exec -c 6 --ignore="*example*" -- \
+      dcm format -l 120 --dry-run .
+      dcm analyze --fatal-style --fatal-performance --fatal-warnings .
+
+  dcm:fix:
+    description: Run `dart code metrics` fix for all packages.
+    run: dcm fix -l 120 .
+
+  generate:
+    description: Generate codes for all packages.
+    run:  |
+      melos exec -c 1 --depends-on="build_runner" -- \
+        dart run build_runner build -d
+
+  generate:assets:
+    description: Generate asset codes for all packages.
+    run:  |
+      melos exec -c 1 --depends-on="flutter_gen_runner" -- \
+        dart run build_runner build -d
+
+  # Tests
+  test:
+    description: Run all Flutter tests in this project.
+    run: melos run test:select --no-select
+
+  test:select:
+    description: Run `flutter test` for selected packages.
+    run: melos exec -c 1 -- flutter test
+    packageFilters:
+      dirExists: test
+
+  test:coverage:
+    description: Generate coverage for the selected package.
+    run: |
+      melos exec -c 4 --fail-fast -- \
+        flutter test --coverage
+
+  test:update-goldens:
+    description: Re-generate all golden test files.
+    run: melos exec -- "flutter test --update-goldens"
+    packageFilters:
+      dirExists: test
+
+  # CI Scripts
+  review:
+    description: Review the codebase.
+    run:  |
+      ./tools/scripts/review.sh
+  review:fix:
+    description: Fix the codebase.
+    run:  |
+      melos dart:fix && \
+      melos dcm:fix
+
+  build:android:
+    description: Build Android APK.
+    run: ./tools/scripts/build_android.sh
+
+  release:android:
+    description: Release Android APK.
+    run: ./tools/scripts/release_android.sh
+
+  build:ios:
+    description: Build iOS IPA.
+    run: ./tools/scripts/build_ios.sh
+
+  release:ios:
+    description: Release iOS IPA.
+    run: ./tools/scripts/release_ios.sh

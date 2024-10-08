@@ -1,0 +1,7 @@
+{
+  "title": "Authentication",
+  "header": "Login to your account",
+  "button": {
+    "login": "Log <b>in</b>"
+  }
+}

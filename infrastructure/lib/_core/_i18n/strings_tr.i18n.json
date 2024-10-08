@@ -1,0 +1,85 @@
+{
+  "permissions": {
+    "dialog": {
+      "buttons": {
+        "cancel": "İptal",
+        "ok": "Tamam",
+        "openSettings": "Ayarları Aç",
+        "retry": "Yeniden Dene",
+        "understood": "Anladım"
+      },
+      "denied": {
+        "description": "@:permissions.type izni ilerlemek için gereklidir. Lütfen uygulama ayarlarından etkinleştirin.",
+        "title": "@:permissions.type İzni Reddedilmiş"
+      },
+      "limited": {
+        "description": "Sınırlı @:permissions.type erişimi sağladınız. Tam erişim izni vermek istiyorsanız, lütfen ayarlarınızı düzenleyin.",
+        "title": "@:permissions.type İzni Sınırlı"
+      },
+      "permanentlyDenied": {
+        "description": "@:permissions.type izni gerekli ancak kalıcı olarak reddedilmiş. Lütfen uygulama ayarlarından etkinleştirin.",
+        "title": "@:permissions.type İzni Kalıcı Olarak Reddedilmiş"
+      },
+      "provisional": {
+        "description": "Uygulama geçici olarak yetkilendirilmiş. Bazı özellikler sınırlı olabilir.",
+        "title": "Geçici @:permissions.type İzni"
+      },
+      "restricted": {
+        "description": "@:permissions.type erişimi sistem politikaları veya ebeveyn kontrolleri tarafından kısıtlanmıştır.",
+        "title": "@:permissions.type İzni Kısıtlanmış"
+      }
+    },
+    "failures": {
+      "invalidPermissionType": "Geçersiz izin türü: $type",
+      "unknownPermissionRequest": "İzin istenirken bir hata oluştu."
+    },
+    "type(context=PermissionTypeEnum)": {
+      "accessMediaLocation": "Medya Konumuna Erişim",
+      "accessNotificationPolicy": "Bildirim Politikasına Erişim",
+      "activityRecognition": "Aktivite Tanıma",
+      "appTrackingTransparency": "Uygulama Takip Şeffaflığı",
+      "audio": "Ses",
+      "bluetooth": "Bluetooth",
+      "bluetoothAdvertise": "Bluetooth Reklamı",
+      "bluetoothConnect": "Bluetooth Bağlantısı",
+      "bluetoothScan": "Bluetooth Taraması",
+      "calendar": "Takvim",
+      "calendarFullAccess": "Takvime Tam Erişim",
+      "calendarWriteOnly": "Sadece Takvim Yaz",
+      "camera": "Kamera",
+      "contacts": "Kişiler",
+      "criticalAlerts": "Kritik Uyarılar",
+      "ignoreBatteryOptimizations": "Batarya Optimizasyonlarını Yoksay",
+      "location": "Konum",
+      "locationAlways": "Daima Konum",
+      "locationWhenInUse": "Kullanıldığında Konum",
+      "manageExternalStorage": "Harici Depolamayı Yönet",
+      "mediaLibrary": "Medya Kütüphanesi",
+      "microphone": "Mikrofon",
+      "nearbyWifiDevices": "Yakındaki Wi-Fi Cihazları",
+      "notification": "Bildirim",
+      "phone": "Telefon",
+      "photos": "Fotoğraflar",
+      "photosAddOnly": "Sadece Fotoğraf Ekle",
+      "reminders": "Hatırlatıcılar",
+      "requestInstallPackages": "Paket Yükleme İsteği",
+      "scheduleExactAlarm": "Kesin Alarmı Planla",
+      "sensors": "Sensörler",
+      "sensorsAlways": "Daima Sensörler",
+      "sms": "SMS",
+      "speech": "Konuşma",
+      "storage": "Depolama",
+      "systemAlertWindow": "Sistem Uyarı Penceresi",
+      "unknown": "Bilinmeyen",
+      "videos": "Videolar"
+    }
+  },
+  "presentation": {
+    "validations": {
+      "email": "$field geçerli bir eposta adresi olmalıdır.",
+      "maxLength": "$field alanı $count karakterden uzun olamaz.",
+      "minLength": "$field alanı $count karakterden kısa olamaz.",
+      "required": "$field alanı zorunludur."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+# 
+
+# This `build.yaml` file is used to configure various code generation tools such as Auto Route,
+# Freezed, Json Serializable, Injectable, and Slang for a Flutter project.
+
+
+targets:
+  $default:
+    builders:
+      # Injectable Generators
+      #
+      # Injectable is used to generate dependency injection code for the app. It automatically generates
+      # registration code for classes annotated with `@Injectable` or `@LazySingleton`.
+
+      # This section controls the Injectable dependency injection code generation.
+      injectable_generator:injectable_builder:
+        generate_for:
+          include:
+            - lib/locator/locator.dart

@@ -1,0 +1,30 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+# 
+
+# This `build.yaml` file is used to configure various code generation tools such as Auto Route,
+# Freezed, Json Serializable, Injectable, and Slang for a Flutter project.
+
+
+targets:
+  $default:
+    builders:
+      # Slang Generators
+      #
+      # Slang is used for internationalization (i18n) by generating translation classes. This configuration
+      # controls how translations are handled and generated.
+
+      # This section configures the Slang package for generating i18n (internationalization) translation classes.
+      slang_build_runner:
+        options:
+          locale_handling: false
+          translation_class_visibility: public
+          fallback_strategy: base_locale
+          input_directory: lib/_core/_i18n
+          output_directory: lib/_core/_i18n
+          output_file_name: translations.g.dart
+          key_case: camel
+          key_map_case: camel
+          param_case: camel
+          flat_map: false
