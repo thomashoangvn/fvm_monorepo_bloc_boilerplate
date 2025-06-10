@@ -39,8 +39,8 @@ Follow these steps to set up and run the project:
    Use FVM to switch to the required Flutter version:
 
    ```bash
-   fvm install 3.24.3
-   fvm use 3.24.3
+   fvm install 3.32.2
+   fvm use 3.32.2
    ```
 
 3. **Install Dependencies**

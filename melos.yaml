@@ -34,8 +34,8 @@ command:
 
   bootstrap:
     environment:
-      sdk: ">=3.5.3 <4.0.0"
-      flutter: ">=3.24.3 <4.0.0"
+      sdk: ">=3.8.1 <4.0.0"
+      flutter: ">=3.32.2 <4.0.0"
     dependencies:
       # List of dependencies for the project.
       adaptive_theme: ^3.6.0
@@ -56,7 +56,7 @@ command:
       infinite_scroll_pagination: ^4.0.0
       injectable: ^2.4.4
       internet_connection_checker_plus: ^2.5.1
-      intl: ^0.19.0
+      intl: ^0.20.2
       json_annotation: ^4.9.0
       lottie: ^3.1.2
       universal_html: ^2.2.4
