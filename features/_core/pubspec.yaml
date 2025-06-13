@@ -19,7 +19,7 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: ^9.0.0
-  build_runner: ^2.4.13
+  build_runner: ^2.4.15
   dart_code_metrics_presets: ^2.16.0
   freezed: ^2.5.7
   injectable_generator: ^2.6.2

@@ -54,5 +54,5 @@ dependency_overrides:
       ref: develop
 
 dev_dependencies:
-  build_runner: ^2.4.13
+  build_runner: ^2.4.15
   injectable_generator: ^2.6.2

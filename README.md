@@ -19,6 +19,34 @@ Follow these steps to set up and run the project:
    brew install fvm
    ```
 
+   ```bash
+   fvm flutter precache
+   fvm flutter pub cache repair
+   fvm flutter doctor -v
+   ```
+
+- **Option** installed.
+
+   ```bash
+   fvm flutter pub cache clean
+   fvm flutter pub get
+   fvm flutter pub outdated
+   fvm flutter pub upgrade --major-versions 
+   ```
+
+- **Android** namespace same package.
+
+   ```bash
+   namespace = "com.example.app_name"
+   ```
+
+   ```bash
+   package com.example.app_name
+   import io.flutter.embedding.android.FlutterActivity
+
+   class MainActivity : FlutterActivity()
+   ```
+
 - **Melos** installed.
 
    ```bash

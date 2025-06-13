@@ -63,7 +63,7 @@ class WidgetbookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook(
-      components: components,
+      directories: components,
       appBuilder: (_, Widget child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -73,19 +73,26 @@ class WidgetbookApp extends StatelessWidget {
           home: child,
         );
       },
-      addons: <Addon<dynamic>>[
-        DeviceFrameAddon(
-          <DeviceInfo>[
-            Devices.android.samsungGalaxyA50,
-            Devices.android.samsungGalaxyS20,
-            Devices.ios.iPhoneSE,
-            Devices.ios.iPhone13ProMax,
-          ],
-        ),
-        GridAddon(100),
-        InspectorAddon(),
-        AlignmentAddon(),
+      addons: [
+        ViewportAddon(<ViewportData>[
+          AndroidViewports.samsungGalaxyA50,
+          AndroidViewports.samsungGalaxyS20,
+          IosViewports.iPad,
+          IosViewports.iPhone13ProMax,
+          IosViewports.iPhoneSE,
+        ]),
       ],
+      // addons: <Addon<dynamic>>[
+      //   DeviceFrameAddon(<DeviceInfo>[
+      //     Devices.android.samsungGalaxyA50,
+      //     Devices.android.samsungGalaxyS20,
+      //     Devices.ios.c,
+      //     Devices.ios.iPhone13ProMax,
+      //   ]),
+      //   GridAddon(100),
+      //   InspectorAddon(),
+      //   AlignmentAddon(),
+      // ],
     );
   }
 }
