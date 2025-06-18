@@ -35,6 +35,10 @@ class AuthGuard extends AutoRouteGuard {
 
   /// Handles the navigation when a user attempts to access a guarded route.
   ///
+  /// This method checks the authentication status of the user by accessing the [AuthCubit]
+  /// and the user data through the [UserCubit]. It determines whether the user is authenticated
+  /// or unauthenticated based on the current state of these cubits.
+  ///
   /// If the user is authenticated (checked via the [AuthCubit]) and their user data is available
   /// (checked via the [UserCubit]), the route navigation proceeds by calling [resolver.next].
   ///
@@ -45,18 +49,27 @@ class AuthGuard extends AutoRouteGuard {
   /// - [router]: The current router stack that manages the navigation flow.
   @override
   Future<void> onNavigation(
-      NavigationResolver resolver, StackRouter router) async {
-    // Check if the user is authenticated and user data exists.
-    Future<void>.delayed(Duration.zero, () async {
-      if (locator<AuthCubit>().state == AuthStatusEnum.authenticated &&
-          locator<UserCubit>().state.user.isNotEmpty) {
-        // Proceed with the navigation if authenticated.
-        resolver.next();
-      }
-      // Redirect to the authentication route if unauthenticated.
-      else if (locator<AuthCubit>().state == AuthStatusEnum.unauthenticated) {
-        await resolver.redirect(const AuthRoute(), replace: true);
-      }
-    });
+    NavigationResolver resolver,
+    StackRouter router,
+  ) async {
+    final authCubit = locator<AuthCubit>();
+    final userCubit = locator<UserCubit>();
+
+    // Wait for the AuthCubit to be in a non-initial state
+    if (authCubit.state == AuthStatusEnum.initial) {
+      await authCubit.stream.firstWhere(
+        (AuthStatusEnum state) => state != AuthStatusEnum.initial,
+      );
+    }
+
+    // Get the latest states
+    final authState = authCubit.state;
+    final user = userCubit.state.user;
+
+    if (authState == AuthStatusEnum.authenticated && user.isNotEmpty) {
+      resolver.next();
+    } else if (authState == AuthStatusEnum.unauthenticated) {
+      await resolver.redirect(const AuthRoute(), replace: true);
+    }
   }
 }
