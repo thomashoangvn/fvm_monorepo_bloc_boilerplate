@@ -1,0 +1,143 @@
+# Copyright 2024 Thomas. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+#
+
+name: fmbb
+
+# Specifies to use fvm (Flutter Version Management) for the Flutter SDK.
+sdkPath: .fvm/flutter_sdk
+
+# Defines the project structure and the packages used in the workspace.
+packages:
+  - app
+  - packages/**
+
+command:
+  bootstrap:
+    environment:
+      sdk: ">=3.5.3 <4.0.0"
+      flutter: ">=3.32.2 <4.0.0"
+
+    dependencies:
+      # List of dependencies for the project.
+      
+    dev_dependencies:
+    # List of dev dependencies used for generating code, metrics, etc.
+    
+    # Allows running `pub get` in parallel.
+    runPubGetInParallel: true
+
+    hooks:
+      pre: melos clean
+      post: melos generate && melos reset:ios
+
+  clean:
+    hooks:
+      pre: melos reset
+
+# Scripts for various tasks like cleaning, generating code, running tests, etc.
+scripts:
+  reset:
+    description: Clean things very deeply by removing untracked files.
+    run: |
+      melos exec --flutter -c 1 -- "flutter clean"
+
+  reset:ios:
+    description: Clean ios pods to fix any pods related issues.
+    run: |
+      cd app/ios && \
+      fvm flutter precache --ios && \
+      pod install
+  
+  generate:
+    description: Generate codes for all packages.
+    run:  |
+      melos exec -c 1 --depends-on="build_runner" -- \
+        dart run build_runner build -d
+
+  generate:assets:
+    description: Generate asset codes for all packages.
+    run:  |
+      melos exec -c 1 --depends-on="flutter_gen_runner" -- \
+        dart run build_runner build -d
+  
+  # Run Scripts
+  run:debug:
+    run:  |
+      cd app && \
+      fvm flutter run lib/main.dart -d '64B68A23-0091-49BA-A674-B0CC116F08D6'
+    select-package:
+      scope: 'app'
+
+  run:release:
+    run:  |
+      cd app && \
+      fvm flutter run lib/main.dart -d '64B68A23-0091-49BA-A674-B0CC116F08D6' --release
+    select-package:
+      scope: 'app'
+  
+  # Build Scripts
+  build:ipa:uat:
+    run:  |
+      melos exec -- fvm flutter build ipa --release --flavor=uat --export-method app-store
+    select-package:
+      scope: 'app'
+
+  build:ipa:prod:
+    run:  |
+      melos exec -- fvm flutter build ipa --release --flavor=prod --export-method app-store
+    select-package:
+      scope: 'app'
+
+  build:apk:uat:
+    run:  |
+      melos exec -- fvm flutter build apk --release --flavor=uat
+    select-package:
+      scope: 'app'
+  
+  build:apk:prod:
+    run:  |
+      melos exec -- fvm flutter build apk --release --flavor=prod
+    select-package:
+      scope: 'app'
+
+  build:aab:uat:
+    run:  |
+      melos exec -- fvm flutter build aab --release --flavor=uat
+    select-package:
+      scope: 'app'
+
+  build:aab:prod:
+    run:  |
+      melos exec -- fvm flutter build aab --release --flavor=prod
+    select-package:
+      scope: 'app'
+
+  # CI Scripts
+  review:
+    description: Review the codebase.
+    run:  |
+      ./tools/scripts/review.sh
+
+  review:fix:
+    description: Fix the codebase.
+    run:  |
+      melos dart:fix && \
+      melos dcm:fix
+
+  build:android:
+    description: Build Android APK.
+    run: ./tools/scripts/build_android.sh
+
+  release:android:
+    description: Release Android APK.
+    run: ./tools/scripts/release_android.sh
+
+  build:ios:
+    description: Build iOS IPA.
+    run: ./tools/scripts/build_ios.sh
+
+  release:ios:
+    description: Release iOS IPA.
+    run: ./tools/scripts/release_ios.sh
