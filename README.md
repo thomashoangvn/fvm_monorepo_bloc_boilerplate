@@ -37,8 +37,8 @@ Follow these steps to set up and run the project:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://........git
-   cd ...._app
+   git clone https://github.com/thomashoangvn/fvm_monorepo_bloc_boilerplate.git
+   cd fvm_monorepo_bloc_boilerplate
    ```
 
 2. **Set Flutter Version with FVM**
@@ -58,6 +58,8 @@ Follow these steps to set up and run the project:
 
    ```bash
    fvm flutter pub get
+   fvm flutter pub outdated
+   fvm flutter pub upgrade
    ```
 
 4. **Bootstrap the Project with Melos**
@@ -69,6 +71,7 @@ Follow these steps to set up and run the project:
    ```
 
    ```bash
+   export PATH="$PATH":"$HOME/.pub-cache/bin"
    melos bootstrap
    ```
 
@@ -77,7 +80,7 @@ Follow these steps to set up and run the project:
    You can find and update the Android app_name, versionName, versionCode values at productFlavors
 
    ```bash
-   resValue "string", "app_name", "一品雞煲火鍋"
+   resValue "string", "app_name", "App Name"
    versionName = "1.0.0"
    versionCode = 1
    ```
@@ -85,7 +88,7 @@ Follow these steps to set up and run the project:
    You can find and update the iOS (Production) APP_NAME, APP_VERSION, APP_BUILD_NUMBER values at xcconfig
 
    ```bash
-   APP_NAME=一品雞煲火鍋
+   APP_NAME=APP Name
    APP_VERSION=1.0.0
    APP_BUILD_NUMBER=1
    ```
@@ -93,9 +96,11 @@ Follow these steps to set up and run the project:
    Debug the project using vscode:
 
    ```bash
-   fvm flutter run lib/main.dart -d 'iPhone 16' --flavor=uat
+   cd app
+   fvm flutter run lib/main.dart -d 'iPhone 16'
    or
-   fvm flutter run lib/main.dart -d 'iPhone 16' --flavor=prod
+   cd app
+   fvm flutter run lib/main.dart -d 'iPhone 16'
    ```
 
    Debug the project using melos:
