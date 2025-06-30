@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,335 +10,130 @@ part of 'sign_in_form_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SignInFormEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) emailOnChanged,
-    required TResult Function(String password) passwordOnChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? signInWithEmail,
-    TResult? Function(String email)? emailOnChanged,
-    TResult? Function(String password)? passwordOnChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? emailOnChanged,
-    TResult Function(String password)? passwordOnChanged,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_EmailOnChanged value) emailOnChanged,
-    required TResult Function(_PasswordOnChanged value) passwordOnChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_SignInWithEmail value)? signInWithEmail,
-    TResult? Function(_EmailOnChanged value)? emailOnChanged,
-    TResult? Function(_PasswordOnChanged value)? passwordOnChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_EmailOnChanged value)? emailOnChanged,
-    TResult Function(_PasswordOnChanged value)? passwordOnChanged,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignInFormEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent()';
+  }
 }
 
 /// @nodoc
-abstract class $SignInFormEventCopyWith<$Res> {
-  factory $SignInFormEventCopyWith(
-          SignInFormEvent value, $Res Function(SignInFormEvent) then) =
-      _$SignInFormEventCopyWithImpl<$Res, SignInFormEvent>;
-}
-
-/// @nodoc
-class _$SignInFormEventCopyWithImpl<$Res, $Val extends SignInFormEvent>
-    implements $SignInFormEventCopyWith<$Res> {
-  _$SignInFormEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, _then);
+class $SignInFormEventCopyWith<$Res> {
+  $SignInFormEventCopyWith(
+      SignInFormEvent _, $Res Function(SignInFormEvent) __);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _Initial implements SignInFormEvent {
+  const _Initial();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'SignInFormEvent.initial()';
   }
+}
+
+/// @nodoc
+
+class _SignInWithEmail implements SignInFormEvent {
+  const _SignInWithEmail();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _SignInWithEmail);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) emailOnChanged,
-    required TResult Function(String password) passwordOnChanged,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? signInWithEmail,
-    TResult? Function(String email)? emailOnChanged,
-    TResult? Function(String password)? passwordOnChanged,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? emailOnChanged,
-    TResult Function(String password)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_EmailOnChanged value) emailOnChanged,
-    required TResult Function(_PasswordOnChanged value) passwordOnChanged,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_SignInWithEmail value)? signInWithEmail,
-    TResult? Function(_EmailOnChanged value)? emailOnChanged,
-    TResult? Function(_PasswordOnChanged value)? passwordOnChanged,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_EmailOnChanged value)? emailOnChanged,
-    TResult Function(_PasswordOnChanged value)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements SignInFormEvent {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$$_SignInWithEmailCopyWith<$Res> {
-  factory _$$_SignInWithEmailCopyWith(
-          _$_SignInWithEmail value, $Res Function(_$_SignInWithEmail) then) =
-      __$$_SignInWithEmailCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_SignInWithEmailCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res, _$_SignInWithEmail>
-    implements _$$_SignInWithEmailCopyWith<$Res> {
-  __$$_SignInWithEmailCopyWithImpl(
-      _$_SignInWithEmail _value, $Res Function(_$_SignInWithEmail) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_SignInWithEmail implements _SignInWithEmail {
-  const _$_SignInWithEmail();
 
   @override
   String toString() {
     return 'SignInFormEvent.signInWithEmail()';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithEmail);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) emailOnChanged,
-    required TResult Function(String password) passwordOnChanged,
-  }) {
-    return signInWithEmail();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? signInWithEmail,
-    TResult? Function(String email)? emailOnChanged,
-    TResult? Function(String password)? passwordOnChanged,
-  }) {
-    return signInWithEmail?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? emailOnChanged,
-    TResult Function(String password)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmail != null) {
-      return signInWithEmail();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_EmailOnChanged value) emailOnChanged,
-    required TResult Function(_PasswordOnChanged value) passwordOnChanged,
-  }) {
-    return signInWithEmail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_SignInWithEmail value)? signInWithEmail,
-    TResult? Function(_EmailOnChanged value)? emailOnChanged,
-    TResult? Function(_PasswordOnChanged value)? passwordOnChanged,
-  }) {
-    return signInWithEmail?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_EmailOnChanged value)? emailOnChanged,
-    TResult Function(_PasswordOnChanged value)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmail != null) {
-      return signInWithEmail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithEmail implements SignInFormEvent {
-  const factory _SignInWithEmail() = _$_SignInWithEmail;
 }
 
 /// @nodoc
-abstract class _$$_EmailOnChangedCopyWith<$Res> {
-  factory _$$_EmailOnChangedCopyWith(
-          _$_EmailOnChanged value, $Res Function(_$_EmailOnChanged) then) =
-      __$$_EmailOnChangedCopyWithImpl<$Res>;
+
+class _EmailOnChanged implements SignInFormEvent {
+  const _EmailOnChanged(this.email);
+
+  final String email;
+
+  /// Create a copy of SignInFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EmailOnChangedCopyWith<_EmailOnChanged> get copyWith =>
+      __$EmailOnChangedCopyWithImpl<_EmailOnChanged>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EmailOnChanged &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.emailOnChanged(email: $email)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$EmailOnChangedCopyWith<$Res>
+    implements $SignInFormEventCopyWith<$Res> {
+  factory _$EmailOnChangedCopyWith(
+          _EmailOnChanged value, $Res Function(_EmailOnChanged) _then) =
+      __$EmailOnChangedCopyWithImpl;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_EmailOnChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res, _$_EmailOnChanged>
-    implements _$$_EmailOnChangedCopyWith<$Res> {
-  __$$_EmailOnChangedCopyWithImpl(
-      _$_EmailOnChanged _value, $Res Function(_$_EmailOnChanged) _then)
-      : super(_value, _then);
+class __$EmailOnChangedCopyWithImpl<$Res>
+    implements _$EmailOnChangedCopyWith<$Res> {
+  __$EmailOnChangedCopyWithImpl(this._self, this._then);
 
+  final _EmailOnChanged _self;
+  final $Res Function(_EmailOnChanged) _then;
+
+  /// Create a copy of SignInFormEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_EmailOnChanged(
+    return _then(_EmailOnChanged(
       null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -346,167 +142,23 @@ class __$$_EmailOnChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailOnChanged implements _EmailOnChanged {
-  const _$_EmailOnChanged(this.email);
+class _PasswordOnChanged implements SignInFormEvent {
+  const _PasswordOnChanged(this.password);
 
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'SignInFormEvent.emailOnChanged(email: $email)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_EmailOnChanged &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_EmailOnChangedCopyWith<_$_EmailOnChanged> get copyWith =>
-      __$$_EmailOnChangedCopyWithImpl<_$_EmailOnChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) emailOnChanged,
-    required TResult Function(String password) passwordOnChanged,
-  }) {
-    return emailOnChanged(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? signInWithEmail,
-    TResult? Function(String email)? emailOnChanged,
-    TResult? Function(String password)? passwordOnChanged,
-  }) {
-    return emailOnChanged?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? emailOnChanged,
-    TResult Function(String password)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (emailOnChanged != null) {
-      return emailOnChanged(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_EmailOnChanged value) emailOnChanged,
-    required TResult Function(_PasswordOnChanged value) passwordOnChanged,
-  }) {
-    return emailOnChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_SignInWithEmail value)? signInWithEmail,
-    TResult? Function(_EmailOnChanged value)? emailOnChanged,
-    TResult? Function(_PasswordOnChanged value)? passwordOnChanged,
-  }) {
-    return emailOnChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_EmailOnChanged value)? emailOnChanged,
-    TResult Function(_PasswordOnChanged value)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (emailOnChanged != null) {
-      return emailOnChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EmailOnChanged implements SignInFormEvent {
-  const factory _EmailOnChanged(final String email) = _$_EmailOnChanged;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$_EmailOnChangedCopyWith<_$_EmailOnChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_PasswordOnChangedCopyWith<$Res> {
-  factory _$$_PasswordOnChangedCopyWith(_$_PasswordOnChanged value,
-          $Res Function(_$_PasswordOnChanged) then) =
-      __$$_PasswordOnChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String password});
-}
-
-/// @nodoc
-class __$$_PasswordOnChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res, _$_PasswordOnChanged>
-    implements _$$_PasswordOnChangedCopyWith<$Res> {
-  __$$_PasswordOnChangedCopyWithImpl(
-      _$_PasswordOnChanged _value, $Res Function(_$_PasswordOnChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? password = null,
-  }) {
-    return _then(_$_PasswordOnChanged(
-      null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_PasswordOnChanged implements _PasswordOnChanged {
-  const _$_PasswordOnChanged(this.password);
-
-  @override
   final String password;
 
-  @override
-  String toString() {
-    return 'SignInFormEvent.passwordOnChanged(password: $password)';
-  }
+  /// Create a copy of SignInFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PasswordOnChangedCopyWith<_PasswordOnChanged> get copyWith =>
+      __$PasswordOnChangedCopyWithImpl<_PasswordOnChanged>(this, _$identity);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PasswordOnChanged &&
+            other is _PasswordOnChanged &&
             (identical(other.password, password) ||
                 other.password == password));
   }
@@ -514,179 +166,101 @@ class _$_PasswordOnChanged implements _PasswordOnChanged {
   @override
   int get hashCode => Object.hash(runtimeType, password);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$_PasswordOnChangedCopyWith<_$_PasswordOnChanged> get copyWith =>
-      __$$_PasswordOnChangedCopyWithImpl<_$_PasswordOnChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) emailOnChanged,
-    required TResult Function(String password) passwordOnChanged,
-  }) {
-    return passwordOnChanged(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? signInWithEmail,
-    TResult? Function(String email)? emailOnChanged,
-    TResult? Function(String password)? passwordOnChanged,
-  }) {
-    return passwordOnChanged?.call(password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? emailOnChanged,
-    TResult Function(String password)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordOnChanged != null) {
-      return passwordOnChanged(password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_EmailOnChanged value) emailOnChanged,
-    required TResult Function(_PasswordOnChanged value) passwordOnChanged,
-  }) {
-    return passwordOnChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_SignInWithEmail value)? signInWithEmail,
-    TResult? Function(_EmailOnChanged value)? emailOnChanged,
-    TResult? Function(_PasswordOnChanged value)? passwordOnChanged,
-  }) {
-    return passwordOnChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_EmailOnChanged value)? emailOnChanged,
-    TResult Function(_PasswordOnChanged value)? passwordOnChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordOnChanged != null) {
-      return passwordOnChanged(this);
-    }
-    return orElse();
+  String toString() {
+    return 'SignInFormEvent.passwordOnChanged(password: $password)';
   }
 }
 
-abstract class _PasswordOnChanged implements SignInFormEvent {
-  const factory _PasswordOnChanged(final String password) =
-      _$_PasswordOnChanged;
+/// @nodoc
+abstract mixin class _$PasswordOnChangedCopyWith<$Res>
+    implements $SignInFormEventCopyWith<$Res> {
+  factory _$PasswordOnChangedCopyWith(
+          _PasswordOnChanged value, $Res Function(_PasswordOnChanged) _then) =
+      __$PasswordOnChangedCopyWithImpl;
+  @useResult
+  $Res call({String password});
+}
 
-  String get password;
-  @JsonKey(ignore: true)
-  _$$_PasswordOnChangedCopyWith<_$_PasswordOnChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+/// @nodoc
+class __$PasswordOnChangedCopyWithImpl<$Res>
+    implements _$PasswordOnChangedCopyWith<$Res> {
+  __$PasswordOnChangedCopyWithImpl(this._self, this._then);
+
+  final _PasswordOnChanged _self;
+  final $Res Function(_PasswordOnChanged) _then;
+
+  /// Create a copy of SignInFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? password = null,
+  }) {
+    return _then(_PasswordOnChanged(
+      null == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$SignInFormState {
-  RequestState get state => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  RequestState get state;
+  String get message;
+  String get email;
+  String get password;
 
-  @JsonKey(ignore: true)
-  $SignInFormStateCopyWith<SignInFormState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInFormStateCopyWith<$Res> {
-  factory $SignInFormStateCopyWith(
-          SignInFormState value, $Res Function(SignInFormState) then) =
-      _$SignInFormStateCopyWithImpl<$Res, SignInFormState>;
-  @useResult
-  $Res call(
-      {RequestState state, String message, String email, String password});
-}
-
-/// @nodoc
-class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
-    implements $SignInFormStateCopyWith<$Res> {
-  _$SignInFormStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of SignInFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SignInFormStateCopyWith<SignInFormState> get copyWith =>
+      _$SignInFormStateCopyWithImpl<SignInFormState>(
+          this as SignInFormState, _$identity);
+
   @override
-  $Res call({
-    Object? state = null,
-    Object? message = null,
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_value.copyWith(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as RequestState,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SignInFormState &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, state, message, email, password);
+
+  @override
+  String toString() {
+    return 'SignInFormState(state: $state, message: $message, email: $email, password: $password)';
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInFormStateCopyWith<$Res>
-    implements $SignInFormStateCopyWith<$Res> {
-  factory _$$_SignInFormStateCopyWith(
-          _$_SignInFormState value, $Res Function(_$_SignInFormState) then) =
-      __$$_SignInFormStateCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SignInFormStateCopyWith<$Res> {
+  factory $SignInFormStateCopyWith(
+          SignInFormState value, $Res Function(SignInFormState) _then) =
+      _$SignInFormStateCopyWithImpl;
   @useResult
   $Res call(
       {RequestState state, String message, String email, String password});
 }
 
 /// @nodoc
-class __$$_SignInFormStateCopyWithImpl<$Res>
-    extends _$SignInFormStateCopyWithImpl<$Res, _$_SignInFormState>
-    implements _$$_SignInFormStateCopyWith<$Res> {
-  __$$_SignInFormStateCopyWithImpl(
-      _$_SignInFormState _value, $Res Function(_$_SignInFormState) _then)
-      : super(_value, _then);
+class _$SignInFormStateCopyWithImpl<$Res>
+    implements $SignInFormStateCopyWith<$Res> {
+  _$SignInFormStateCopyWithImpl(this._self, this._then);
 
+  final SignInFormState _self;
+  final $Res Function(SignInFormState) _then;
+
+  /// Create a copy of SignInFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -695,21 +269,21 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$_SignInFormState(
+    return _then(_self.copyWith(
       state: null == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as RequestState,
       message: null == message
-          ? _value.message
+          ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
-          ? _value.password
+          ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -718,8 +292,8 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInFormState implements _SignInFormState {
-  const _$_SignInFormState(
+class _SignInFormState implements SignInFormState {
+  const _SignInFormState(
       {required this.state,
       required this.message,
       required this.email,
@@ -734,16 +308,19 @@ class _$_SignInFormState implements _SignInFormState {
   @override
   final String password;
 
+  /// Create a copy of SignInFormState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SignInFormState(state: $state, message: $message, email: $email, password: $password)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
+      __$SignInFormStateCopyWithImpl<_SignInFormState>(this, _$identity);
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInFormState &&
+            other is _SignInFormState &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.email, email) || other.email == email) &&
@@ -754,30 +331,61 @@ class _$_SignInFormState implements _SignInFormState {
   @override
   int get hashCode => Object.hash(runtimeType, state, message, email, password);
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'SignInFormState(state: $state, message: $message, email: $email, password: $password)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$SignInFormStateCopyWith<$Res>
+    implements $SignInFormStateCopyWith<$Res> {
+  factory _$SignInFormStateCopyWith(
+          _SignInFormState value, $Res Function(_SignInFormState) _then) =
+      __$SignInFormStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {RequestState state, String message, String email, String password});
+}
+
+/// @nodoc
+class __$SignInFormStateCopyWithImpl<$Res>
+    implements _$SignInFormStateCopyWith<$Res> {
+  __$SignInFormStateCopyWithImpl(this._self, this._then);
+
+  final _SignInFormState _self;
+  final $Res Function(_SignInFormState) _then;
+
+  /// Create a copy of SignInFormState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>
-      __$$_SignInFormStateCopyWithImpl<_$_SignInFormState>(this, _$identity);
+  $Res call({
+    Object? state = null,
+    Object? message = null,
+    Object? email = null,
+    Object? password = null,
+  }) {
+    return _then(_SignInFormState(
+      state: null == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as RequestState,
+      message: null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
-abstract class _SignInFormState implements SignInFormState {
-  const factory _SignInFormState(
-      {required final RequestState state,
-      required final String message,
-      required final String email,
-      required final String password}) = _$_SignInFormState;
-
-  @override
-  RequestState get state;
-  @override
-  String get message;
-  @override
-  String get email;
-  @override
-  String get password;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

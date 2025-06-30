@@ -14,8 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-
-    Future.delayed(const Duration(seconds: 1), () {
+    Future<void>.delayed(const Duration(seconds: 1), () {
       Future.microtask(
         () => context.read<AuthenticatorWatcherBloc>().add(
               const AuthenticatorWatcherEvent.authCheckRequest(),
@@ -29,23 +28,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticatorWatcherBloc, AuthenticatorWatcherState>(
       listener: (context, state) {
-        state.maybeMap(
-          orElse: () {
-           
-          },
-          authenticating: (_) {
-
-          },
-          authenticated: (_) {
-            context.replaceNamed(AppRoutes.DASHBOARD_ROUTE_NAME);
-          },
-          isFirstTime: (_) {
-           
-          },
-          unauthenticated: (_) {
-            context.replaceNamed(AppRoutes.LOGIN_ROUTE_NAME);
-          }
-        );
+        if (state.runtimeType.toString() == '_Authenticated') {
+          context.replaceNamed(AppRoutes.DASHBOARD_ROUTE_NAME);
+        } else if (state.runtimeType.toString() == '_Unauthenticated') {
+          context.replaceNamed(AppRoutes.LOGIN_ROUTE_NAME);
+        }
+        // Có thể xử lý các state khác nếu muốn
       },
       child: Scaffold(
         body: Container(
